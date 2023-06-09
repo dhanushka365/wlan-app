@@ -20,5 +20,10 @@ Route::get('/', function () {
 Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(function(){
     Route::get('dashboard', 'AdminController@dashboard');
     Route::match(['get','post'],'login','AdminController@login');
+    Route::get('area','AdminController@AreaChart');
 });
-    
+
+Route::prefix('/device')->namespace('App\Http\Controllers\Device')-> group(function(){
+    Route::post('save-data','DeviceController@saveData');
+    Route::get('/get-status', 'DeviceController@getStatus');
+});
