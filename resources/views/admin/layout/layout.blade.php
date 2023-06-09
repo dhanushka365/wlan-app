@@ -12,7 +12,7 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ url ('admin/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="{{ url ('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    <link rel="stylesheet" href="{{ url ('admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ url ('admin/css/adminlte.min.css')}}">
 </head>
