@@ -24,6 +24,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(functio
 });
 
 Route::prefix('/device')->namespace('App\Http\Controllers\Device')-> group(function(){
-    Route::post('save-data','DeviceController@saveData');
-    Route::get('/get-status', 'DeviceController@getStatus');
+    Route::post('save_data','DeviceController@saveData');
+    Route::get('/get_status', 'DeviceController@getStatus');
 });

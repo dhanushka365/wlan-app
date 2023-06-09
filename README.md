@@ -5,3 +5,6 @@
 
 ## Controller create
 -  php artisan make:controller Device/DeviceController   
+
+## serve app
+-  php artisan serve --host=0.0.0.0 --port=8000
