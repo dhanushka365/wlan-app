@@ -466,7 +466,8 @@
                                              <!-- End Contact Item -->
                                              <li>
                                                  <a href="#">
-                                                     <img class="contacts-list-img" src="dist/img/user6-128x128.jpg"
+                                                     <img class="contacts-list-img"
+                                                         src="{{ asset('admin/images/user6-128x128.jpg')}}"
                                                          alt="User Avatar">
 
                                                      <div class="contacts-list-info">
@@ -484,7 +485,8 @@
                                              <!-- End Contact Item -->
                                              <li>
                                                  <a href="#">
-                                                     <img class="contacts-list-img" src="dist/img/user8-128x128.jpg"
+                                                     <img class="contacts-list-img"
+                                                         src="{{ asset('admin/images/user8-128x128.jpg')}}"
                                                          alt="User Avatar">
 
                                                      <div class="contacts-list-info">
