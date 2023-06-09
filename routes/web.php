@@ -13,12 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\Auth\AdminController;
+
+// ...
+
+// Admin login routes
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+});
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(function(){
     Route::get('dashboard', 'AdminController@dashboard');
-    Route::match(['get','post'],'login','AdminController@login');
+   // Route::match(['get','post'],'login','AdminController@login');
 });
     
