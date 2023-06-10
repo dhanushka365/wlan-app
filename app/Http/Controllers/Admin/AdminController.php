@@ -12,6 +12,11 @@ class AdminController extends Controller
         return view('admin.dashboard');
         
     }
+    
+    public function Surveillance_dashboard(){
+        return view('admin.Surveillance_dashboard');
+        
+    }
 
     public function AreaChart(){
         return view('admin.layout.area');
