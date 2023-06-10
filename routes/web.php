@@ -25,11 +25,12 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(functio
     Route::get('area','AdminController@AreaChart');
     Route::get('logout','AdminController@logout');
     Route::get('Surveillance_dashboard', 'AdminController@Surveillance_dashboard');
+    Route::get('Relay_dashboard', 'AdminController@Relay_dashboard');
     });
     
 });
 
 Route::prefix('/device')->namespace('App\Http\Controllers\Device')-> group(function(){
     Route::post('save_data','DeviceController@saveData');
-    Route::get('/get_status', 'DeviceController@getStatus');
+    Route::get('get_status', 'DeviceController@getStatus');
 });

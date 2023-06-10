@@ -18,6 +18,11 @@ class AdminController extends Controller
         return view('admin.Surveillance_dashboard');
         
     }
+    
+    public function Relay_dashboard(){
+        return view('admin.Relay_dashboard');
+        
+    }
 
     public function AreaChart(){
         return view('admin.layout.area');
@@ -27,7 +32,6 @@ class AdminController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             // echo "<pre>"; print_r($data);die;
-            
             $rules=[
                 'email' => 'required|email|max:255',
                 'password' => 'required|max:30'
