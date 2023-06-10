@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Models\Event; // Assuming you have an Event model
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,7 +19,10 @@ class AdminController extends Controller
     }
     
     public function Surveillance_dashboard(){
-        return view('admin.Surveillance_dashboard');
+        $events = DB::table('time_table')->select('event_name', 'event_time')->get();
+        return view('admin.Surveillance_dashboard')->with('events', $events);
+
+        // return view('admin.Surveillance_dashboard');
         
     }
     
