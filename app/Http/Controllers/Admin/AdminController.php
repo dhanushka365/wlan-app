@@ -11,6 +11,8 @@ class AdminController extends Controller
 {
     
     public function dashboard(){
+        
+       // $energyData = DB::table('elec_usage')->select('account_no', 'voltage', 'currentathi wage')->get();
         return view('admin.dashboard');
         
     }
