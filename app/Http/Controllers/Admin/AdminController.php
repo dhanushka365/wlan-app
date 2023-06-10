@@ -12,13 +12,16 @@ class AdminController extends Controller
 {
     
     public function dashboard(){
-        
+       $energyDataAll = DB::table('elec_usage')->select('account_no', 'voltage', 'current','power','energy','frequency','pf','date','time')
+       ->orderBy('date', 'desc')
+       ->orderBy('time', 'desc')
+       ->take(8)
+       ->get();
        $energyData = DB::table('elec_usage')->select('account_no', 'voltage', 'current','power','energy','frequency','pf','date','time')
-       ->orderByDesc('account_no')
        ->orderBy('date', 'desc')
        ->orderBy('time', 'desc')
        ->first();
-        return view('admin.dashboard', ['energyData' => $energyData]);
+        return view('admin.dashboard', ['energyData' => $energyData] , ['energyDataAll' => $energyDataAll]);
         
     }
     
