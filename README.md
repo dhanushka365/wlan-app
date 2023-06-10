@@ -12,6 +12,7 @@
 
 ## database seeder create
 -  php artisan make:seeder AdminsTableSeeder
+-  php artisan db:seed
 
 ## Controller create
 -  php artisan make:controller Device/DeviceController   

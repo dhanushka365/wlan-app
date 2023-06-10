@@ -23,6 +23,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(functio
     Route::group(['middleware' => ['admin']], function(){
     Route::get('dashboard', 'AdminController@dashboard');
     Route::get('area','AdminController@AreaChart');
+    Route::get('logout','AdminController@logout');
     });
     
 });
