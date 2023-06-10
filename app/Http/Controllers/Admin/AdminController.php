@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+use Validator;
 class AdminController extends Controller
 {
     public function dashboard(){
@@ -26,6 +27,18 @@ class AdminController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
             // echo "<pre>"; print_r($data);die;
+            
+            $rules=[
+                'email' => 'required|email|max:255',
+                'password' => 'required|max:30'
+            ];
+            
+            $customMessage = [
+                'email.required' => "Email is required",
+                'email.email' => 'Valid Email is Required',
+                'password.required' => 'password is required',
+            ];
+            $this->validate($request,$rules,$customMessage);
             if(Auth::guard('admin')->attempt(['email'=>$data['email'],'password'=>$data['password']])){
                 return redirect("admin/dashboard");
             }else{
