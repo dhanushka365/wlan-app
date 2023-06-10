@@ -9,6 +9,7 @@ use Auth;
 use Validator;
 class AdminController extends Controller
 {
+    
     public function dashboard(){
         return view('admin.dashboard');
         
@@ -20,7 +21,9 @@ class AdminController extends Controller
     }
     
     public function Relay_dashboard(){
-        return view('admin.Relay_dashboard');
+        $relayData = DB::table('relay')->select('Relay_ID', 'Status', 'Relay_Type')->get();
+
+        return view('admin.Relay_dashboard', ['relayData' => $relayData]);
         
     }
 
