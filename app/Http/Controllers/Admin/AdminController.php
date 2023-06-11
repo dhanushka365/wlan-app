@@ -10,8 +10,21 @@ use Auth;
 use Validator;
 class AdminController extends Controller
 {
+    public function updatePassword(){
+
+        return view('admin.update_password');
+    }
     public function dashboard(){
-        return view('admin.dashboard');
+       $energyDataAll = DB::table('elec_usage')->select('account_no', 'voltage', 'current','power','energy','frequency','pf','date','time')
+       ->orderBy('date', 'desc')
+       ->orderBy('time', 'desc')
+       ->take(8)
+       ->get();
+       $energyData = DB::table('elec_usage')->select('account_no', 'voltage', 'current','power','energy','frequency','pf','date','time')
+       ->orderBy('date', 'desc')
+       ->orderBy('time', 'desc')
+       ->first();
+        return view('admin.dashboard', ['energyData' => $energyData] , ['energyDataAll' => $energyDataAll]);
         
     }
     
@@ -25,7 +38,9 @@ class AdminController extends Controller
     }
     
     public function Relay_dashboard(){
-        return view('admin.Relay_dashboard');
+        $relayData = DB::table('relay')->select('Relay_ID', 'Status', 'Relay_Type')->get();
+
+        return view('admin.Relay_dashboard', ['relayData' => $relayData]);
         
     }
 

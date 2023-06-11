@@ -21,6 +21,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(functio
    
     Route::match(['get','post'],'login','AdminController@login');
     Route::group(['middleware' => ['admin']], function(){
+    Route::get('update-password', 'AdminController@updatePassword');
     Route::get('dashboard', 'AdminController@dashboard');
     Route::get('area','AdminController@AreaChart');
     Route::get('logout','AdminController@logout');
@@ -33,4 +34,16 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(functio
 Route::prefix('/device')->namespace('App\Http\Controllers\Device')-> group(function(){
     Route::post('save_data','DeviceController@saveData');
     Route::get('get_status', 'DeviceController@getStatus');
+    Route::post('update_status', 'DeviceController@updateStatus')->name('device.update_status');
+});
+
+
+Route::get('/json-file', function () {
+    $filePath = public_path('data.json');
+    
+    // Read the JSON file
+    $json = file_get_contents($filePath);
+    
+    // Return the JSON response
+    return response($json, 200)->header('Content-Type', 'application/json');
 });

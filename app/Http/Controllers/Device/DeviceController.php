@@ -7,6 +7,27 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class DeviceController extends Controller
 {
+    public function updateStatus(Request $request)
+    {
+        if ($request->filled('relayId') && $request->filled('newStatus')) {
+            $relayId = $request->input('relayId');
+            $newStatus = $request->input('newStatus');
+
+            try {
+                // Update the status in the database
+                DB::table('relay')
+                    ->where('Relay_ID', $relayId)
+                    ->update(['Status' => $newStatus]);
+
+                return redirect()->back();
+            } catch (\Exception $e) {
+                return response('Error: ' . $e->getMessage(), 500);
+            }
+        }
+
+        return response('Invalid data', 400);
+    }
+    
     public function getStatus(Request $request)
     {
         if ($request->has('Relay_ID')) {
