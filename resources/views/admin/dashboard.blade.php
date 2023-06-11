@@ -91,7 +91,7 @@
                  <div class="col-md-12">
                      <div class="card">
                          <div class="card-header">
-                             <h5 class="card-title">ENERGY & POWER</h5>
+                             <h5 class="card-title">Actual vs Forecast</h5>
 
                              <div class="card-tools">
                                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -170,17 +170,23 @@
                                      </thead>
                                      <tbody>
                                          @foreach ($energyDataAll as $data)
-                                         <tr @if ($data->voltage > 245) style="background-color: lightcoral;" @endif>
-                                             <td>{{ $data->account_no }}</td>
-                                             <td>{{ $data->voltage }}</td>
-                                             <td>{{ $data->current }}</td>
-                                             <td>{{ $data->power }}</td>
-                                             <td>{{ $data->energy }}</td>
-                                             <td>{{ $data->frequency }}</td>
-                                             <td>{{ $data->pf }}</td>
-                                             <td>{{ $data->date }}</td>
-                                             <td>{{ $data->time}}</td>
-                                         </tr>
+                                         @php
+                                         $voltage = $data->voltage;$color = '';if ($voltage >= 230 && $voltage <= 245) {
+                                             $color='lightgreen' ; } elseif ($voltage> 245) {
+                                             $color = 'lightcoral';
+                                             }
+                                             @endphp
+                                             <tr style="background-color: {{ $color }}">
+                                                 <td>{{ $data->account_no }}</td>
+                                                 <td>{{ $data->voltage }}</td>
+                                                 <td>{{ $data->current }}</td>
+                                                 <td>{{ $data->power }}</td>
+                                                 <td>{{ $data->energy }}</td>
+                                                 <td>{{ $data->frequency }}</td>
+                                                 <td>{{ $data->pf }}</td>
+                                                 <td>{{ $data->date }}</td>
+                                                 <td>{{ $data->time}}</td>
+                                             </tr>
                                      </tbody>
                                      @endforeach
                                  </table>
