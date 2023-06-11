@@ -35,24 +35,25 @@
                         <form>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        placeholder="Enter email">
+                                    <label for="admin_email">Email address</label>
+                                    <input class="form-control" id="admin_email" value="{{
+                                        Auth::guard('admin')->user()->email}}" readonly=""
+                                        style="background-colour: #666;">
+                                </div>
+                                <div class=" form-group">
+                                    <label for="current_pwd">Current Password</label>
+                                    <input type="password" class="form-control" name="current_pwd" id="
+                                    current_pwd" placeholder="Current Password">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Old Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="new_pwd">New Password</label>
+                                    <input type="password" class="form-control" id="new_pwd" name="current_pwd"
+                                        placeholder=" New Password">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Current Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">New Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="confirm_pwd">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirm_pwd" name="confirm_pwd"
+                                        placeholder="Confirm Password">
                                 </div>
                             </div>
                             <!-- /.card-body -->
