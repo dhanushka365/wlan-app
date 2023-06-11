@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Dashboard v2</h1>
+                    <h1 class="m-0">CC TV</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -19,6 +19,36 @@
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+
+
+    <div class="row">
+        <div class="col-sm-3">
+            <!-- <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            </div> -->
+            <img src="http://127.0.0.1:5000/video_feed_1" class="center-block" width="80%"/>
+        </div>
+        <div class="col-sm-3">
+            <!-- <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            </div> -->
+            <img src="http://127.0.0.1:5000/video_feed_1" width="80%"/>
+        </div>
+        <div class="col-sm-3">
+            <!-- <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            </div> -->
+            <img src="http://127.0.0.1:5000/video_feed_1" width="80%"/>
+        </div>
+        <div class="col-sm-3">
+            <!-- <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="http://127.0.0.1:5000/video_feed_1"></iframe>
+            </div> -->
+            <img src="http://127.0.0.1:5000/video_feed_1" width="80%"/>
+        </div>
+    </div>
+
+    <br>
 
     <!-- Main content -->
     <section class="content">
