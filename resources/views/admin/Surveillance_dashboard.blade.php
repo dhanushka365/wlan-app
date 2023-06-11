@@ -29,7 +29,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Event Table</h3>
+
+                            <h3 class="card-title">Threatful pose detection Table</h3>
+
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -53,6 +55,33 @@
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Face Recognition Table</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Person Name</th>
+                                        <th>Event Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($events2 as $event)
+                                    <tr>
+                                        <td>{{ $event->Person }}</td>
+                                        <td>{{ $event->Time }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+
                 </div>
                 <!-- /.col -->
             </div>
