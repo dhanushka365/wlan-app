@@ -27,6 +27,25 @@ class DeviceController extends Controller
 
         return response('Invalid data', 400);
     }
+
+    
+    public function getBuzzerStatus(Request $request)
+    {
+        if ($request->has('Buzzer_ID')) {
+            $buzzer_id = $request->input('Buzzer_ID');
+            $status = DB::table('buzzer_table')
+                ->where('Buzzer_ID', $buzzer_id)
+                ->value('Status');
+
+            if ($status !== null) {
+                return $status;
+            } else {
+                return "Error: Buzzer ID not found.";
+            }
+        } else {
+            return "Error: Buzzer ID not provided.";
+        }
+    }
     
     public function getStatus(Request $request)
     {
