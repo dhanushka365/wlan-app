@@ -66,13 +66,15 @@
                                              </td>
                                              <td>{{ $data->Relay_Type }}</td>
                                              <td>
-                                                 <div class="checkbox">
-                                                     <label>
-                                                         <input type="checkbox" data-toggle="toggle"
-                                                             data-relayid="{{ $data->Relay_ID }}" @if ($data->Status ==
-                                                         1) checked @endif>
-                                                     </label>
-                                                 </div>
+                                                 <form action="{{ route('device.update_status') }}" method="POST">
+                                                     @csrf
+                                                     <input type="hidden" name="relayId" value="{{ $data->Relay_ID }}">
+                                                     <input type="hidden" name="newStatus"
+                                                         value="{{ $data->Status == 1 ? '0' : '1' }}">
+                                                     <button type="submit"
+                                                         class="btn btn-sm {{ $data->Status == 1 ? 'btn-success' : 'btn-danger' }}">
+                                                         {{ $data->Status == 1 ? 'ON' : 'OFF' }}</button>
+                                                 </form>
                                              </td>
                                          </tr>
                                          @endforeach
