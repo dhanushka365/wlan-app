@@ -154,7 +154,7 @@
                          <!-- /.card-header -->
                          <div class="card-body p-0">
                              <div class="table-responsive">
-                                 <table class="table m-1">
+                                 <table class="table m-0">
                                      <thead>
                                          <tr>
                                              <th>Account No</th>
