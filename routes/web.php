@@ -22,6 +22,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(functio
     Route::match(['get','post'],'login','AdminController@login');
     Route::group(['middleware' => ['admin']], function(){
     Route::get('update-password', 'AdminController@updatePassword');
+    Route::post('check-current-password', 'AdminController@checkCurrentPassword');
     Route::get('dashboard', 'AdminController@dashboard');
     Route::get('area','AdminController@AreaChart');
     Route::get('logout','AdminController@logout');
@@ -34,7 +35,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(functio
 Route::prefix('/device')->namespace('App\Http\Controllers\Device')-> group(function(){
     Route::post('save_data','DeviceController@saveData');
     Route::get('get_status', 'DeviceController@getStatus');
-     Route::get('get_Buzzer_status', 'DeviceController@getBuzzerStatus');
+    Route::get('get_Buzzer_status', 'DeviceController@getBuzzerStatus');
     Route::post('update_status', 'DeviceController@updateStatus')->name('device.update_status');
 });
 

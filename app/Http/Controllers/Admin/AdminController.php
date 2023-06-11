@@ -8,8 +8,20 @@ use Illuminate\Http\Request;
 use DB;
 use Auth;
 use Validator;
+use Hash;
 class AdminController extends Controller
 {
+    public function checkCurrentPassword(Request $request){
+        $data =$request->all();
+        if(Hash::check($data['current_pwd'],Auth::guard('admin')->user()->password)){
+            return "true";
+        }else{
+            return "false";
+        }
+        
+    }
+
+    
     public function updatePassword(){
 
         return view('admin.update_password');

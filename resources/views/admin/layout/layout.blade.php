@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <title>AdminLTE 3 | Dashboard 2</title>
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->
@@ -63,7 +65,7 @@
 
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ url ('admin/js/pages/dashboard2.js')}}"></script>
-    <script src="{{ url ('admin/js/pages/custom.js')}}"></script>
+    <script src="{{ url ('admin/js/custom.js')}}"></script>
 </body>
 
 </html>
