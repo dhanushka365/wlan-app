@@ -30,10 +30,8 @@ class AdminController extends Controller
     
     public function Surveillance_dashboard(){
         $events = DB::table('time_table')->select('event_name', 'event_time')->get();
-
         $event2 = DB::table('records')->select('Person', 'Time')->get();
         return view('admin.Surveillance_dashboard')->with('events', $events)->with('events2', $event2);
-
 
         // return view('admin.Surveillance_dashboard');
         
