@@ -16,7 +16,7 @@ $(function () {
 
   function updateChart(){
       async function fetchData(){
-          const url = 'http://localhost/js/data.json'
+          const url = 'http://localhost:8000/json-file'
           const response = await fetch(url);
           const datapoints = await response.json();
           console.log(datapoints)
