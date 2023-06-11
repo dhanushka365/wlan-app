@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Models\Event; // Assuming you have an Event model
-
+use App\Models\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
@@ -22,11 +22,28 @@ class AdminController extends Controller
     }
 
     
-    public function updatePassword(){
-
+    public function updatePassword(Request $request){
+        if($request->isMethod('post')){
+            $data =$request->all();
+            //check if the current password is correct
+            if(Hash::check($data['current_pwd'],Auth::guard('admin')->user()->password)){
+                //check if password and confirm password are matching
+                if($data['new_pwd']==$data['confirm_pwd']){
+                    //update new password
+                    Admin::where('id',Auth::guard('admin')->user()->id)->update(['password'=>bcrypt($data['new_pwd'])]);
+                    return redirect()->back()->with('success_message', 'Password has been Updated Sucessfully!');
+                    
+                }else{
+                    return redirect()->back()->with('error_message', 'New Password and Retype Password not match!');
+                }
+            }else{
+                return redirect()->back()->with('error_message', 'Your Current password is Incorrect!');
+            }
+        }
         return view('admin.update_password');
     }
     public function dashboard(){
+        // echo "<pre>"; print_r(Auth::guard('admin')->user()); die;
        $energyDataAll = DB::table('elec_usage')->select('account_no', 'voltage', 'current','power','energy','frequency','pf','date','time')
        ->orderBy('date', 'desc')
        ->orderBy('time', 'desc')
