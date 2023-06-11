@@ -12,86 +12,82 @@ $(function () {
   //-----------------------
 
   // Get context with jQuery - using jQuery's .get() method.
-  var energyChartCanvas = $('#energyChart').get(0).getContext('2d')
+  let hoistedValue = 0;
 
-  var  energyChartData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-      {
-        label: 'Energy',
-        backgroundColor: 'rgba(60,141,188,0.9)',
-        borderColor: 'rgba(60,141,188,0.8)',
-        pointRadius: false,
-        pointColor: '#3b8bba',
-        pointStrokeColor: 'rgba(60,141,188,1)',
-        pointHighlightFill: '#fff',
-        pointHighlightStroke: 'rgba(60,141,188,1)',
-        data: [28, 48, 40, 19, 86, 27, 90]
+  function updateChart(){
+      async function fetchData(){
+          const url = 'http://localhost/js/data.json'
+          const response = await fetch(url);
+          const datapoints = await response.json();
+          console.log(datapoints)
+          return datapoints;
+      };
+      fetchData().then(datpoints =>{
+          const date = datpoints.map((date ,index)=>{
+              return date.Date;
+          });
+          //console.log(month)
+          const value = datpoints.map((value ,index)=>{
+              return value.TrueMegaWatt;
+          });
+  
+          const value1 = datpoints.map((value1 ,index)=>{
+              return value1.PredictedMeagWatt;
+          });
+  
+          if(myChart.data.labels.length>100){
+              myChart.data.labels.shift();
+              myChart.data.datasets[0].data.shift();
+              myChart.data.datasets[1].data.shift();
+          }
+          console.log(value)
+          //myChart.data.labels =month;
+          //myChart.data.datasets[0].data =value;
+          myChart.data.labels.push(date[hoistedValue])
+          myChart.data.datasets[0].data.push(value[hoistedValue])
+          myChart.data.datasets[1].data.push(value1[hoistedValue])
+          myChart.update();
+          //console.log('show')
+          hoistedValue++;
+      })
+  
+     
+  };
+  setInterval(updateChart,700)
+  const ctx = document.getElementById('canvas').getContext('2d');
+  
+  const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: [],
+          datasets: [{
+              label: '# Actual',
+              data: [],
+              backgroundColor:'transparent',
+              borderColor:'green',
+              borderWidth: 4
+          },
+          {
+              label: '# Prediction',
+              data: [],
+              backgroundColor:'transparent',
+              borderColor:'red',
+              borderWidth: 4
+          }
+      ]
       },
-      {
-        label: 'Power',
-        backgroundColor: 'rgba(210, 214, 222, 1)',
-        borderColor: 'rgba(210, 214, 222, 1)',
-        pointRadius: false,
-        pointColor: 'rgba(210, 214, 222, 1)',
-        pointStrokeColor: '#c1c7d1',
-        pointHighlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
-        data: [65, 59, 80, 81, 56, 55, 40]
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: false
+              }
+          }
       }
-    ]
-  }
-
-  var energyChartOptions = {
-    maintainAspectRatio: false,
-    responsive: true,
-    legend: {
-      display: false
-    },
-    scales: {
-      xAxes: [{
-        gridLines: {
-          display: false
-        }
-      }],
-      yAxes: [{
-        gridLines: {
-          display: false
-        }
-      }]
-    }
-  }
-
-  // This will get the first returned node in the jQuery collection.
-  // eslint-disable-next-line no-unused-vars
-  var energyChart = new Chart(energyChartCanvas, {
-    type: 'line',
-    data: energyChartData,
-    options: energyChartOptions
-  }
-  )
+  });
 
   //---------------------------
   // - END MONTHLY SALES CHART -
   //---------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   //-----------------------
   // - MONTHLY SALES CHART -
   //-----------------------

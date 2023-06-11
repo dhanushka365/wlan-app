@@ -124,7 +124,8 @@
 
                                      <div class="chart">
                                          <!-- Sales Chart Canvas -->
-                                         <canvas id="energyChart" height="280" style="height: 280px;"></canvas>
+                                         <canvas id="canvas" height="85" style="height: 85px;"></canvas>
+                                         <button onclick="updateChart()">Fetch</button>
                                      </div>
                                      <!-- /.chart-responsive -->
                                  </div>
