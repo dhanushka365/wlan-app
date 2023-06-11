@@ -10,7 +10,10 @@ use Auth;
 use Validator;
 class AdminController extends Controller
 {
-    
+    public function updatePassword(){
+
+        return view('admin.update_password');
+    }
     public function dashboard(){
        $energyDataAll = DB::table('elec_usage')->select('account_no', 'voltage', 'current','power','energy','frequency','pf','date','time')
        ->orderBy('date', 'desc')
