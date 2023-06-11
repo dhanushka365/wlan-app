@@ -34,9 +34,11 @@
         chart.draw(data, options);
     }
     </script>
+
 </head>
 
 <body>
+    <canvas id="canvas"></canvas>
     <div id="chart_div" style="width: 100%; height: 500px;"></div>
 </body>
 

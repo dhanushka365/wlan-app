@@ -34,3 +34,14 @@ Route::prefix('/device')->namespace('App\Http\Controllers\Device')-> group(funct
     Route::post('save_data','DeviceController@saveData');
     Route::get('get_status', 'DeviceController@getStatus');
 });
+
+
+Route::get('/json-file', function () {
+    $filePath = public_path('data.json');
+    
+    // Read the JSON file
+    $json = file_get_contents($filePath);
+    
+    // Return the JSON response
+    return response($json, 200)->header('Content-Type', 'application/json');
+});
