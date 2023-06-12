@@ -22,7 +22,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(functio
     Route::match(['get','post'],'login','AdminController@login');
     Route::group(['middleware' => ['admin']], function(){
     Route::match(['get','post'],'update-password', 'AdminController@updatePassword');
-    Route::match(['get','post'],'update-admin-details', 'AdminController@updateAdminDetails');
+    Route::match(['get','post'],'update-details', 'AdminController@updateDetails');
     Route::post('check-current-password', 'AdminController@checkCurrentPassword');
     Route::get('dashboard', 'AdminController@dashboard');
     Route::get('area','AdminController@AreaChart');

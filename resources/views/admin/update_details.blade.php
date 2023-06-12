@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Update Admin Password</li>
+                        <li class="breadcrumb-item active">Update Admin Details</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,7 +28,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Update Admin Password</h3>
+                            <h3 class="card-title">Update Admin Details</h3>
                         </div>
                         @if(Session::has('error_message'))
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -46,9 +46,18 @@
                             </button>
                         </div>
                         @endif
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="post" action="{{ url('admin/update-password')}}">@csrf
+                        <form method="post" action="{{ url('admin/update-details')}}">@csrf
                             <div class=" card-body">
                                 <div class="form-group">
                                     <label for="admin_email">Email address</label>
@@ -57,20 +66,14 @@
                                         style="background-colour: #666;">
                                 </div>
                                 <div class=" form-group">
-                                    <label for="current_pwd">Current Password</label>
-                                    <input type="password" class="form-control" name="current_pwd" id="
-                                    current_pwd" placeholder="Current Password">
-                                    <span id=verifyCurrentPwd></span>
+                                    <label for="admin_name">Name</label>
+                                    <input type="text" class="form-control" name="admin_name" id="admin_name"
+                                        placeholder="Name" value="{{Auth::guard('admin')->user()->name}}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="new_pwd">New Password</label>
-                                    <input type="password" class="form-control" id="new_pwd" name="current_pwd"
-                                        placeholder=" New Password">
-                                </div>
-                                <div class="form-group">
-                                    <label for="confirm_pwd">Confirm Password</label>
-                                    <input type="password" class="form-control" id="confirm_pwd" name="confirm_pwd"
-                                        placeholder="Confirm Password">
+                                    <label for="admin_mobile">Mobile</label>
+                                    <input type="text" class="form-control" id="admin_mobile" name="admin_mobile"
+                                        placeholder="Mobile" value="{{Auth::guard('admin')->user()->mobile}}">
                                 </div>
                             </div>
                             <!-- /.card-body -->
