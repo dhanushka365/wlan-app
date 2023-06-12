@@ -20,6 +20,10 @@ class AdminController extends Controller
         }
         
     }
+    
+    public function updateAdminDetails(){
+        return view('admin.update_details');
+    }
 
     
     public function updatePassword(Request $request){

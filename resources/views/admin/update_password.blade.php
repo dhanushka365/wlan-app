@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Update Admin Password</li>
+                        <li class="breadcrumb-item active">Update Admin Details</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -58,13 +58,13 @@
                                 </div>
                                 <div class=" form-group">
                                     <label for="current_pwd">Current Password</label>
-                                    <input type="password" class="form-control" name="current_pwd" id="
-                                    current_pwd" placeholder="Current Password">
+                                    <input type="password" class="form-control" name="current_pwd" id="current_pwd"
+                                        placeholder="Current Password">
                                     <span id=verifyCurrentPwd></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="new_pwd">New Password</label>
-                                    <input type="password" class="form-control" id="new_pwd" name="current_pwd"
+                                    <input type="password" class="form-control" id="new_pwd" name="new_pwd"
                                         placeholder=" New Password">
                                 </div>
                                 <div class="form-group">
