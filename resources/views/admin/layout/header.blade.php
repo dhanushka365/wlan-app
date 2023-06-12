@@ -7,7 +7,7 @@
          </li>
          <li class="nav-item d-none d-sm-inline-block">
              <a href="index3.html" class="nav-link">Welcome
-                 <strong>{{Auth::guard('admin')->user()->name}}({{Auth::guard('admin')->user()->type}})</strong></a>
+                 <strong>{{Auth::guard('admin')->user()->type}}</strong></a>
          </li>
          <li class="nav-item d-none d-sm-inline-block">
              <a href="{{url('admin/dashboard')}}" class="nav-link">Dashboard</a>
