@@ -51,19 +51,19 @@
                          <li class="nav-item">
                              <a href="{{('dashboard')}}" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Dashboard v1</p>
+                                 <p>Dashboard Energy</p>
                              </a>
                          </li>
                          <li class="nav-item">
                              <a href="{{('Relay_dashboard')}}" class="nav-link active">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Dashboard v2</p>
+                                 <p>Dashboard Devices</p>
                              </a>
                          </li>
                          <li class="nav-item">
                              <a href="{{('Surveillance_dashboard')}}" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Dashboard v3</p>
+                                 <p>Dashboard CCTV</p>
                              </a>
                          </li>
                      </ul>
