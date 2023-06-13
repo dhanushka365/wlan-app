@@ -1,5 +1,6 @@
 # Our Presentation Slides
-![PPT-No1](https://github.com/dhanushka365/wlan-app/assets/66137046/1b2ad9d1-58f2-4674-aa0c-1971b756afa2)
+![ppt](https://github.com/dhanushka365/wlan-app/assets/66137046/645dfe6c-a3b9-432b-9b52-3fbba17e9e16)
+
 
 [WLAN EDGE COMPUTER.pptx](https://github.com/dhanushka365/wlan-app/files/11730419/WLAN.EDGE.COMPUTER.pptx)
 
@@ -13,28 +14,24 @@
 ![Energydashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/dada679f-39c4-4f85-b24b-01bb82e0bf73)
 ![Devicedashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/12d67085-b47d-4f5a-8a2f-82e0aed5b567)
 
+### Oonly for development puurpose
+
 ## migrate DB
 -  php artisan make:migration create_db_power_meter_tabel
 -  php artisan make:migration create_db_device_control_tabel
 -  php artisan make:migration create_admins_table
 -  php artisan migrate
-
 ## model create
 -  php artisan make:model Admin
-
 ## middleware create
 -  php artisan make:middleware Admin
-
 ## database seeder create
 -  php artisan make:seeder AdminsTableSeeder
 -  php artisan db:seed
-
 ## Controller create
 -  php artisan make:controller Device/DeviceController   
-
 ## serve app
 -  php artisan serve --host=0.0.0.0 --port=8000
-
 ## image upload
 -  composer require intervention/image
 
