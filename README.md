@@ -13,6 +13,8 @@
 
 ![Energydashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/dada679f-39c4-4f85-b24b-01bb82e0bf73)
 ![Devicedashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/12d67085-b47d-4f5a-8a2f-82e0aed5b567)
+![cammera](https://github.com/dhanushka365/wlan-app/assets/66137046/171abb37-f21f-4abf-92d2-5c4dba1dc8c6)
+
 
 # Oonly for development purpose
 
