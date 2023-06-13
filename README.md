@@ -4,6 +4,7 @@
 ![login](https://github.com/dhanushka365/wlan-app/assets/66137046/541dc1f4-0fe5-4bf6-9fcd-fdbc1c4b03e6)
 
 ![Energydashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/dada679f-39c4-4f85-b24b-01bb82e0bf73)
+![Devicedashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/12d67085-b47d-4f5a-8a2f-82e0aed5b567)
 
 ## migrate DB
 -  php artisan make:migration create_db_power_meter_tabel
