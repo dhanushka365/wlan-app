@@ -15,6 +15,7 @@
 ![Devicedashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/12d67085-b47d-4f5a-8a2f-82e0aed5b567)
 ![cammera](https://github.com/dhanushka365/wlan-app/assets/66137046/171abb37-f21f-4abf-92d2-5c4dba1dc8c6)
 ![posedetction](https://github.com/dhanushka365/wlan-app/assets/66137046/9c0b1288-1c45-4e6d-aa8a-3487dd5a3bf3)
+![face detection](https://github.com/dhanushka365/wlan-app/assets/66137046/e428b2d4-295f-41ad-9296-aca992492e42)
 
 ![password update](https://github.com/dhanushka365/wlan-app/assets/66137046/2c91f5d6-2958-4afa-9306-9a59e9ab8ef4)
 ![update details](https://github.com/dhanushka365/wlan-app/assets/66137046/e6976acf-9ec5-4cc0-a7a3-39ca1ec551bb)
