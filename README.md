@@ -1,5 +1,5 @@
 # Our Presentation Slides
-[Uploading WLAN EDGE COMPUTER.pptx…]()
+[WLAN EDGE COMPUTER.pptx](https://github.com/dhanushka365/wlan-app/files/11730419/WLAN.EDGE.COMPUTER.pptx)
 
 
 # User Interfaces
@@ -35,3 +35,4 @@
 
 ## image upload
 -  composer require intervention/image
+
