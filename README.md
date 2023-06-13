@@ -1,4 +1,5 @@
-![index](https://github.com/dhanushka365/wlan-app/assets/66137046/3e514679-ef82-49bc-8117-f482b5bdb8d8)
+![index](https://github.com/dhanushka365/wlan-app/assets/66137046/3e514679-ef82-49bc-8117-f482b5bdb8d8)![Energydashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/dada679f-39c4-4f85-b24b-01bb82e0bf73)
+
 ## migrate DB
 -  php artisan make:migration create_db_power_meter_tabel
 -  php artisan make:migration create_db_device_control_tabel
