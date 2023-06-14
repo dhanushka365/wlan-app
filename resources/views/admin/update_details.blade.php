@@ -57,7 +57,8 @@
                         @endif
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="post" action="{{ url('admin/update-details')}}">@csrf
+                        <form method="post" action="{{ url('admin/update-details')}}" enctype="multipart/form-data">
+                            @csrf
                             <div class=" card-body">
                                 <div class="form-group">
                                     <label for="admin_email">Email address</label>
@@ -75,10 +76,20 @@
                                     <input type="text" class="form-control" id="admin_mobile" name="admin_mobile"
                                         placeholder="Mobile" value="{{Auth::guard('admin')->user()->mobile}}">
                                 </div>
+                                <div class="form-group">
+                                    <label for="admin_iamge">Image</label>
+                                    <input type="file" class="form-control" id="admin_image" name="admin_image">
+                                    @if(!empty(Auth::guard('admin')->user()->image))
+                                    <a target="_blank"
+                                        href="{{url('admin/images/photos/'.Auth::guard('admin')->user()->image)}}">View
+                                        Image</a>
+                                    <input type="hidden" name="current_iamge"
+                                        value="{{Auth::guard('admin')->user()->image}}"> @endif
+                                </div>
                             </div>
                             <!-- /.card-body -->
 
-                            <div class="card-footer">
+                            <div class=" card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </form>

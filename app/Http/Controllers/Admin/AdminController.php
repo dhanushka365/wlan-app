@@ -9,6 +9,7 @@ use DB;
 use Auth;
 use Validator;
 use Hash;
+use Image;
 class AdminController extends Controller
 {
     public function checkCurrentPassword(Request $request){
@@ -27,18 +28,38 @@ class AdminController extends Controller
             // echo "<pre>"; print_r($data);die;
             $rules=[
                 'admin_name' => 'required|max:255',
-                'admin_mobile' => 'required|numeric|max:10|min:10'
+                'admin_mobile' => 'required|numeric|digits:10',
+                'admin_image' => 'image',
             ];
             
             $customMessage = [
                 'admin_name.required' => "Name is required",
                 'admin_mobile.numeric' => 'valid Mobile is required',
+                'admin_mobile.required' => "Mobile is required",
                 'admin_mobile.max' => 'valid Mobile is required',
                 'admin_mobile.min' => 'valid Mobile is required',
+                'admin_image.image' => 'valid Image is required',
             ];
             $this->validate($request,$rules,$customMessage);
+            
+            //upload admin image
+            if($request ->hasFile('admin_image')){
+                $image_tmp=$request->file('admin_image');
+                if($image_tmp ->isValid()){
+                    //Get Imag Extension
+                    $extension = $image_tmp->getClientOriginalExtension();
+                    //Generate New Image
+                    $imageName = rand(111,99999).'.'.$extension;
+                    $image_path = 'admin/images/photos/'.$imageName;
+                    Image::make($image_tmp)->save($image_path); 
+                }else if(!empty($data['current_image'])){
+                    $imageName = $data['current_image'];      
+                }else{
+                    $imageName="";
+                }
+            }
           //update admin details
-          Admin::where('email',Auth::guard('admin')->user()->email)->update(['name'=>$data['admin_name'],'mobile'=>$data['admin_mobile']]);
+          Admin::where('email',Auth::guard('admin')->user()->email)->update(['name'=>$data['admin_name'],'mobile'=>$data['admin_mobile'],'image'=>$imageName]);
           return redirect()->back()->with('success_message', 'Admin Details has been Updated Sucessfully!');
         }
         return view('admin.update_details');
