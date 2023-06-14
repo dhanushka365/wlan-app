@@ -36,7 +36,8 @@
 -  php artisan make:seeder AdminsTableSeeder
 -  php artisan db:seed
 ## Controller create
--  php artisan make:controller Device/DeviceController   
+-  php artisan make:controller Device/DeviceController 
+-  php artisan make:controller Device/ChartsApiController   
 ## serve app
 -  php artisan serve --host=0.0.0.0 --port=8000
 ## image upload
