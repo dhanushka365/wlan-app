@@ -26,61 +26,50 @@
              <!-- Main row -->
              <div class="row">
                  <!-- Left col -->
-                 <div class="col-md-12">
+                 <div class="col-12">
                      <!-- TABLE: LATEST ORDERS -->
                      <div class="card">
-                         <div class="card-header border-transparent">
+                         <div class="card-header">
                              <h3 class="card-title">Relay Table</h3>
-
-                             <div class="card-tools">
-                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                     <i class="fas fa-minus"></i>
-                                 </button>
-                                 <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                     <i class="fas fa-times"></i>
-                                 </button>
-                             </div>
                          </div>
                          <!-- /.card-header -->
-                         <div class="card-body p-0">
-                             <div class="table-responsive">
-                                 <table class="table m-0">
-                                     <thead>
-                                         <tr>
-                                             <th>Relay ID</th>
-                                             <th>Description</th>
-                                             <th>Status</th>
-                                             <th>ON/OFF</th>
-                                         </tr>
-                                     </thead>
-                                     <tbody>
-                                         @foreach ($relayData as $data)
-                                         <tr>
-                                             <td>{{ $data->Relay_ID }}</td>
-                                             <td>
-                                                 @if ($data->Status == 1)
-                                                 <span class="badge badge-success">Running</span>
-                                                 @else
-                                                 <span class="badge badge-danger">Terminated</span>
-                                                 @endif
-                                             </td>
-                                             <td>{{ $data->Relay_Type }}</td>
-                                             <td>
-                                                 <form action="{{ route('device.update_status') }}" method="POST">
-                                                     @csrf
-                                                     <input type="hidden" name="relayId" value="{{ $data->Relay_ID }}">
-                                                     <input type="hidden" name="newStatus"
-                                                         value="{{ $data->Status == 1 ? '0' : '1' }}">
-                                                     <button type="submit"
-                                                         class="btn btn-sm {{ $data->Status == 1 ? 'btn-success' : 'btn-danger' }}">
-                                                         {{ $data->Status == 1 ? 'ON' : 'OFF' }}</button>
-                                                 </form>
-                                             </td>
-                                         </tr>
-                                         @endforeach
-                                     </tbody>
-                                 </table>
-                             </div>
+                         <div class="card-body">
+                             <table id="relaytbl" class="table table-bordered table-striped">
+                                 <thead>
+                                     <tr>
+                                         <th>Relay ID</th>
+                                         <th>Status</th>
+                                         <th>Description</th>
+                                         <th>ON/OFF</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     @foreach ($relayData as $data)
+                                     <tr>
+                                         <td>{{ $data->Relay_ID }}</td>
+                                         <td>
+                                             @if ($data->Status == 1)
+                                             <span class="badge badge-success">Running</span>
+                                             @else
+                                             <span class="badge badge-danger">Terminated</span>
+                                             @endif
+                                         </td>
+                                         <td>{{ $data->Relay_Type }}</td>
+                                         <td>
+                                             <form action="{{ route('device.update_status') }}" method="POST">
+                                                 @csrf
+                                                 <input type="hidden" name="relayId" value="{{ $data->Relay_ID }}">
+                                                 <input type="hidden" name="newStatus"
+                                                     value="{{ $data->Status == 1 ? '0' : '1' }}">
+                                                 <button type="submit"
+                                                     class="btn btn-sm {{ $data->Status == 1 ? 'btn-success' : 'btn-danger' }}">
+                                                     {{ $data->Status == 1 ? 'ON' : 'OFF' }}</button>
+                                             </form>
+                                         </td>
+                                     </tr>
+                                     @endforeach
+                                 </tbody>
+                             </table>
                              <!-- /.table-responsive -->
                          </div>
                          <!-- /.card-body -->

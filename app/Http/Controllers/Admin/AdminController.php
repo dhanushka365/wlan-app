@@ -10,6 +10,7 @@ use Auth;
 use Validator;
 use Hash;
 use Image;
+use Session;
 class AdminController extends Controller
 {
     public function checkCurrentPassword(Request $request){
@@ -23,6 +24,7 @@ class AdminController extends Controller
     }
     
     public function updateDetails( Request $request){
+        Session::put('page','update-details');
         if($request->isMethod('post')){
             $data = $request->all();
             // echo "<pre>"; print_r($data);die;
@@ -67,6 +69,7 @@ class AdminController extends Controller
 
     
     public function updatePassword(Request $request){
+        Session::put('page','update-password');
         if($request->isMethod('post')){
             $data =$request->all();
             //check if the current password is correct
@@ -87,6 +90,7 @@ class AdminController extends Controller
         return view('admin.update_password');
     }
     public function dashboard(){
+        Session::put('page','dashboard');
         // echo "<pre>"; print_r(Auth::guard('admin')->user()); die;
        $energyDataAll = DB::table('elec_usage')->select('account_no', 'voltage', 'current','power','energy','frequency','pf','date','time')
        ->orderBy('date', 'desc')
@@ -102,6 +106,7 @@ class AdminController extends Controller
     }
     
     public function Surveillance_dashboard(){
+        Session::put('page','surveillance-dashboard');
         $events = DB::table('time_table')->select('event_name', 'event_time')->get();
         $event2 = DB::table('records')->select('Person', 'Time')->get();
         return view('admin.Surveillance_dashboard')->with('events', $events)->with('events2', $event2);
@@ -111,6 +116,7 @@ class AdminController extends Controller
     }
     
     public function Relay_dashboard(){
+        Session::put('page','relay-dashboard');
         $relayData = DB::table('relay')->select('Relay_ID', 'Status', 'Relay_Type')->get();
 
         return view('admin.Relay_dashboard', ['relayData' => $relayData]);

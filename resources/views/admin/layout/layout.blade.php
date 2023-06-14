@@ -66,6 +66,29 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ url ('admin/js/pages/dashboard2.js')}}"></script>
     <script src="{{ url ('admin/js/custom.js')}}"></script>
+    <script src="{{ url ('admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ url ('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{ url ('admin/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <!-- Page specific script -->
+    <script>
+    $(function() {
+        $("#relaytbl").DataTable({
+            "responsive": true,
+            "lengthChange": true,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+    </script>
 </body>
 
 </html>

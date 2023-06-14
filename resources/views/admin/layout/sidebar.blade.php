@@ -43,8 +43,14 @@
              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+                 @if(Session::get('page')=="dashboard" || Session::get('page')=="relay-dashboard"
+                 ||Session::get('page')=="surveillance-dashboard")
+                 @php $active="active" @endphp
+                 @else
+                 @php $active="" @endphp
+                 @endif
                  <li class="nav-item menu-open">
-                     <a href="#" class="nav-link active">
+                     <a href="#" class="nav-link {{$active}}">
                          <i class="nav-icon fas fa-tachometer-alt"></i>
                          <p>
                              Dashboard
@@ -52,20 +58,35 @@
                          </p>
                      </a>
                      <ul class="nav nav-treeview">
+                         @if(Session::get('page')=="dashboard")
+                         @php $active="active" @endphp
+                         @else
+                         @php $active="" @endphp
+                         @endif
                          <li class="nav-item">
-                             <a href="{{('dashboard')}}" class="nav-link">
+                             <a href="{{('dashboard')}}" class="nav-link {{$active}}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Dashboard Energy</p>
                              </a>
                          </li>
+                         @if(Session::get('page')=="relay-dashboard")
+                         @php $active="active" @endphp
+                         @else
+                         @php $active="" @endphp
+                         @endif
                          <li class="nav-item">
-                             <a href="{{('Relay_dashboard')}}" class="nav-link active">
+                             <a href="{{('Relay_dashboard')}}" class="nav-link {{$active}}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Dashboard Devices</p>
                              </a>
                          </li>
+                         @if(Session::get('page')=="surveillance-dashboard")
+                         @php $active="active" @endphp
+                         @else
+                         @php $active="" @endphp
+                         @endif
                          <li class="nav-item">
-                             <a href="{{('Surveillance_dashboard')}}" class="nav-link">
+                             <a href="{{('Surveillance_dashboard')}}" class="nav-link {{$active}}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Dashboard CCTV</p>
                              </a>
@@ -354,8 +375,13 @@
                          </li>
                      </ul>
                  </li> -->
+                 @if(Session::get('page')=="update-password" || Session::get('page')=="update-details")
+                 @php $active="active" @endphp
+                 @else
+                 @php $active="" @endphp
+                 @endif
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="#" class="nav-link {{$active}}">
                          <i class="nav-icon fas fa-cog"></i>
                          <p>
                              Settings
@@ -363,14 +389,24 @@
                          </p>
                      </a>
                      <ul class="nav nav-treeview">
+                         @if(Session::get('page')=="update-password")
+                         @php $active="active" @endphp
+                         @else
+                         @php $active="" @endphp
+                         @endif
                          <li class="nav-item">
-                             <a href="{{url('admin/update-password')}}" class="nav-link">
+                             <a href="{{url('admin/update-password')}}" class="nav-link {{$active}}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Update Admin Password</p>
                              </a>
                          </li>
+                         @if(Session::get('page')=="update-details")
+                         @php $active="active" @endphp
+                         @else
+                         @php $active="" @endphp
+                         @endif
                          <li class="nav-item">
-                             <a href="{{url('admin/update-details')}}" class="nav-link">
+                             <a href="{{url('admin/update-details')}}" class="nav-link {{$active}}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Update Admin Details</p>
                              </a>
