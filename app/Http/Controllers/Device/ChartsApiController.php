@@ -52,5 +52,17 @@ class ChartsApiController extends Controller
         return response()->json(compact('current', 'energy', 'frequency', 'pf'));
     }
 
+    public function pzemSensor()
+    {
+        $elecUsages = DB::table('elec_usage')
+        ->select('account_no','voltage','current','power','energy','frequency','pf','date','time')
+        ->orderBy('date', 'desc')
+        ->orderBy('time', 'desc')
+        ->take(8)
+        ->get();
+
+         return response()->json($elecUsages);
+    }
+
     
 }

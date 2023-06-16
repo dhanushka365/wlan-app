@@ -2,7 +2,59 @@
 
 $(function () {
   'use strict'
-  
+  function updateEnergyTable() {
+    fetch('http://localhost:8000/device/sensordetailstable')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = data.slice(-8).map(dataRow => `
+                <tr style="background-color: ${getColor(dataRow.voltage)}">
+                    <td>${dataRow.account_no}</td>
+                    <td>${dataRow.voltage}</td>
+                    <td>${dataRow.current}</td>
+                    <td>${dataRow.power}</td>
+                    <td>${dataRow.energy}</td>
+                    <td>${dataRow.frequency}</td>
+                    <td>${dataRow.pf}</td>
+                    <td>${dataRow.date}</td>
+                    <td>${dataRow.time}</td>
+                </tr>
+            `).join('');
+
+            const energyTable = document.getElementById('energyTable');
+            energyTable.innerHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Account No</th>
+                            <th>Voltage</th>
+                            <th>Current</th>
+                            <th>Power</th>
+                            <th>Energy</th>
+                            <th>Frequency</th>
+                            <th>Pf</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>${tableBody}</tbody>
+                </table>
+            `;
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function getColor(voltage) {
+    let color = '';
+    if (voltage >= 230 && voltage <= 245) {
+        color = 'lightgreen';
+    } else if (voltage > 245) {
+        color = 'lightcoral';
+    }
+    return color;
+}
+
+window.addEventListener('DOMContentLoaded', updateEnergyTable);
+setInterval(updateEnergyTable, 50);
   /* ChartJS
    * -------
    * Here we will create a few charts using ChartJS

@@ -41,6 +41,7 @@ Route::prefix('/device')->namespace('App\Http\Controllers\Device')-> group(funct
     Route::get('chart', 'ChartsApiController@index')->name('api.chart');
     Route::get('guagechart', 'ChartsApiController@guagechart')->name('api.guagechart');
     Route::get('cards', 'ChartsApiController@cards')->name('api.cards');
+    Route::get('sensordetailstable', 'ChartsApiController@pzemSensor')->name('api.pzemSensor');
     Route::post('update_status', 'DeviceController@updateStatus')->name('device.update_status');
 });
 
