@@ -27,13 +27,12 @@
              <div class="row">
                  <div class="col-12 col-sm-6 col-md-3">
                      <div class="info-box">
-                         <span class="info-box-icon bg-info elevation-1"><i class="fas fa-info"></i></span>
+                         <span class="info-box-icon bg-info elevation-1"><i class="fas fa-bolt"></i></span>
 
                          <div class="info-box-content">
-                             <span class="info-box-text">Volatge</span>
-                             <span class="info-box-number">
-                                 {{ $energyData->voltage }}
-                             </span>
+                             <span class="info-box-text">Current</span>
+                             <span id="currentValue" class="info-box-number">{{ $energyData->current }}</span>
+
 
                          </div>
                          <!-- /.info-box-content -->
@@ -43,11 +42,12 @@
                  <!-- /.col -->
                  <div class="col-12 col-sm-6 col-md-3">
                      <div class="info-box mb-3">
-                         <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-info"></i></span>
+                         <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-bolt"></i></span>
 
                          <div class="info-box-content">
-                             <span class="info-box-text">Power</span>
-                             <span class="info-box-number">{{ $energyData->power }}</span>
+                             <span class="info-box-text">Energy</span>
+                             <span id="energyValue" class="info-box-number">{{ $energyData->energy }}</span>
+
                          </div>
                          <!-- /.info-box-content -->
                      </div>
@@ -60,11 +60,12 @@
 
                  <div class="col-12 col-sm-6 col-md-3">
                      <div class="info-box mb-3">
-                         <span class="info-box-icon bg-success elevation-1"><i class="fas fa-info"></i></span>
+                         <span class="info-box-icon bg-success elevation-1"><i class="fas fa-bolt"></i></span>
 
                          <div class="info-box-content">
-                             <span class="info-box-text">Current</span>
-                             <span class="info-box-number">{{ $energyData->current }}</span>
+                             <span class="info-box-text">Frequency</span>
+                             <span id="frequencyValue" class="info-box-number">{{ $energyData->frequency }}</span>
+
                          </div>
                          <!-- /.info-box-content -->
                      </div>
@@ -73,11 +74,11 @@
                  <!-- /.col -->
                  <div class="col-12 col-sm-6 col-md-3">
                      <div class="info-box mb-3">
-                         <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-info"></i></span>
+                         <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-bolt"></i></span>
 
                          <div class="info-box-content">
-                             <span class="info-box-text">Energy</span>
-                             <span class="info-box-number">{{ $energyData->energy }}</span>
+                             <span class="info-box-text">Pf</span>
+                             <span id="pfValue" class="info-box-number">{{ $energyData->pf }}</span>
                          </div>
                          <!-- /.info-box-content -->
                      </div>
@@ -91,7 +92,7 @@
                  <div class="col-md-8">
                      <div class="card">
                          <div class="card-header">
-                             <h5 class="card-title">Live Energy vs time</h5>
+                             <h5 class="card-title"> Live Toatal Power Usage vs Time</h5>
 
                              <div class="card-tools">
                                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -144,7 +145,7 @@
                  <div class="col-md-4">
                      <div class="card">
                          <div class="card-header">
-                             <h5 class="card-title">Live Energy vs time</h5>
+                             <h5 class="card-title">Live Voltage</h5>
 
                              <div class="card-tools">
                                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -176,7 +177,7 @@
                                      </p>
                                      <div class="chart d-flex justify-content-center align-items-center">
                                          <!-- Sales Chart Canvas -->
-                                         <div id="gauge" height="200" style="height: 200px; font-size: 10px;"></div>
+                                         <div id="gauge" height="210" style="height: 210px; font-size: 10px;"></div>
                                          <!-- <button onclick="updateChart()">Fetch</button> -->
                                      </div>
                                      <!-- /.chart-responsive -->

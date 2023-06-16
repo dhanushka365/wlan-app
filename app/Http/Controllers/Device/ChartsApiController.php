@@ -36,5 +36,21 @@ class ChartsApiController extends Controller
         return response()->json(compact('labels1', 'data1'));
     }
 
+    public function cards()
+    {
+        $elecUsages = DB::table('elec_usage')
+        ->select('current','energy','frequency','pf')
+        ->orderBy('date', 'desc')
+        ->orderBy('time', 'desc')
+        ->take(1)
+        ->get();
+        $current = $elecUsages->pluck('current');
+        $energy = $elecUsages->pluck('energy');
+        $frequency = $elecUsages->pluck('frequency');
+        $pf = $elecUsages->pluck('pf');
+
+        return response()->json(compact('current', 'energy', 'frequency', 'pf'));
+    }
+
     
 }

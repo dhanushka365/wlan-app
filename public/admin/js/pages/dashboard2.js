@@ -2,7 +2,33 @@
 
 $(function () {
   'use strict'
+  
+  /* ChartJS
+   * -------
+   * Here we will create a few charts using ChartJS
+   */
+  function updateCardValues() {
+    fetch('http://localhost:8000/device/cards') // Replace with your API endpoint URL
+    .then(response => response.json())
+    .then(data => {
+      // Update the card values
+      document.getElementById('currentValue').textContent = data.current;
+      document.getElementById('energyValue').textContent = data.energy;
+      document.getElementById('frequencyValue').textContent = data.frequency;
+      document.getElementById('pfValue').textContent = data.pf;
+    })
+    .catch(error => console.error('Error:', error));
+  }
 
+  // Update the card values when the page loads
+  updateCardValues();
+
+  // Update the card values every 5 seconds
+  setInterval(updateCardValues, 50);
+  /* ChartJS
+   * -------
+   * Here we will create a few charts using ChartJS
+   */
 let hoistedValue2 = 0;
 let totalDataPoints2 = 0;
 
@@ -50,6 +76,10 @@ function updateGauge() {
 setInterval(updateGauge, 500);
 
 
+  /* ChartJS
+   * -------
+   * Here we will create a few charts using ChartJS
+   */
   /* ChartJS
    * -------
    * Here we will create a few charts using ChartJS
