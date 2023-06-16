@@ -21,4 +21,20 @@ class ChartsApiController extends Controller
 
         return response()->json(compact('labels', 'data'));
     }
+
+    public function guagechart()
+    {
+        $elecUsages = DB::table('elec_usage')
+        ->select('voltage','time')
+        ->orderBy('date', 'desc')
+        ->orderBy('time', 'desc')
+        ->take(1)
+        ->get();
+        $labels1 = $elecUsages->pluck('time');
+        $data1 = $elecUsages->pluck('voltage');
+
+        return response()->json(compact('labels1', 'data1'));
+    }
+
+    
 }

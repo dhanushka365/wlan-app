@@ -3,6 +3,53 @@
 $(function () {
   'use strict'
 
+let hoistedValue2 = 0;
+let totalDataPoints2 = 0;
+
+// Create the gauge element
+const gauge = new JustGage({
+  id: 'gauge',
+  value: 0,
+  min: 0,
+  max: 300,
+  donut: true,
+  gaugeWidthScale: 0.6,
+  counter: true,
+  decimals: 2,
+  symbol: 'V',
+  pointer: true,
+  gaugeColor: '#ff0000',       // Change the color of the gauge
+  levelColors: ['#00ff00'],    // Change the color of the gauge level
+  titleFontColor: '#0000ff',   // Change the color of the title text
+  valueFontColor: '#ffffff',   // Change the color of the value text
+  labelFontColor: '#ff00ff',   // Change the color of the label text
+  showInnerShadow: false,      // Disable the inner shadow effect
+  gaugeTickColor: '#ffff00'    // Change the color of the gauge tick marks
+});
+
+function updateGauge() {
+  async function fetchData1() {
+    const url = 'http://localhost:8000/device/guagechart';
+    const response = await fetch(url);
+    const datapoints2 = await response.json();
+    return datapoints2;
+  }
+
+  fetchData1().then(datapoints2 => {
+    const date = datapoints2.labels1;
+    const value = datapoints2.data1;
+
+    const energyValue = value[hoistedValue2];
+    gauge.refresh(energyValue);
+
+    hoistedValue2 = (hoistedValue2 + 1) % datapoints2.labels1.length;
+    totalDataPoints2++;
+  });
+}
+
+setInterval(updateGauge, 500);
+
+
   /* ChartJS
    * -------
    * Here we will create a few charts using ChartJS

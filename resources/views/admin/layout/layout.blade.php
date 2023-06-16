@@ -69,6 +69,7 @@
     <script src="{{ url ('admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{ url ('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{ url ('admin/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/justgage@1.4.0/justgage.min.js"></script>
     <!-- Page specific script -->
     <script>
     $(function() {
