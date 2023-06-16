@@ -114,6 +114,11 @@ class AdminController extends Controller
         // return view('admin.Surveillance_dashboard');
         
     }
+
+    public function Chartdashboard(){
+        
+        return view('admin.dashboard_chart');
+    }
     
     public function Relay_dashboard(){
         Session::put('page','relay-dashboard');

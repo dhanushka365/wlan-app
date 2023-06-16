@@ -29,6 +29,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(functio
     Route::get('logout','AdminController@logout');
     Route::get('Surveillance_dashboard', 'AdminController@Surveillance_dashboard');
     Route::get('Relay_dashboard', 'AdminController@Relay_dashboard');
+    Route::get('Chart_dashboard', 'AdminController@Chartdashboard');
     });
     
 });
@@ -37,6 +38,7 @@ Route::prefix('/device')->namespace('App\Http\Controllers\Device')-> group(funct
     Route::post('save_data','DeviceController@saveData');
     Route::get('get_status', 'DeviceController@getStatus');
     Route::get('get_Buzzer_status', 'DeviceController@getBuzzerStatus');
+    Route::get('chart', 'ChartsApiController@index')->name('api.chart');
     Route::post('update_status', 'DeviceController@updateStatus')->name('device.update_status');
 });
 

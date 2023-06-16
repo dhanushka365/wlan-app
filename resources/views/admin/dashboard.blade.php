@@ -91,7 +91,7 @@
                  <div class="col-md-12">
                      <div class="card">
                          <div class="card-header">
-                             <h5 class="card-title">Actual vs Forecast</h5>
+                             <h5 class="card-title">Live Energy vs time</h5>
 
                              <div class="card-tools">
                                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -124,8 +124,8 @@
 
                                      <div class="chart">
                                          <!-- Sales Chart Canvas -->
-                                         <canvas id="canvas" height="85" style="height: 85px;"></canvas>
-                                         <button onclick="updateChart()">Fetch</button>
+                                         <canvas id="canvas1" height="85" style="height: 85px;"></canvas>
+                                         <!-- <button onclick="updateChart()">Fetch</button> -->
                                      </div>
                                      <!-- /.chart-responsive -->
                                  </div>

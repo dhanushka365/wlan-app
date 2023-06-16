@@ -7,6 +7,58 @@ $(function () {
    * -------
    * Here we will create a few charts using ChartJS
    */
+  let hoistedValue1 = 0;
+  let totalDataPoints1 = 0;
+        const ctx1 = document.getElementById('canvas1').getContext('2d');
+
+        const myChart1 = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: '# Power',
+                    data: [],
+                    backgroundColor: 'rgba(0, 128, 255, 0.5)',
+                    borderColor: 'green',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
+        function updateChart1() {
+            async function fetchData1() {
+                const url = 'http://localhost:8000/device/chart';
+                const response = await fetch(url);
+                const datapoints1 = await response.json();
+                return datapoints1;
+            }
+
+            fetchData1().then(datapoints1 => {
+              const date = datapoints1.labels;
+              const value = datapoints1.data;
+      
+              if (myChart1.data.labels.length > 500) {
+                  myChart1.data.labels.shift();
+                  myChart1.data.datasets[0].data.shift();
+              }
+      
+              myChart1.data.labels[totalDataPoints1] = date[hoistedValue1];
+              myChart1.data.datasets[0].data[totalDataPoints1] = value[hoistedValue1];
+              myChart1.update();
+      
+              hoistedValue1 = (hoistedValue1 + 1) % datapoints1.labels.length;
+              totalDataPoints1++;
+            });
+        }
+
+        setInterval(updateChart1, 9500);
  //-----------------------
   // - MONTHLY ENERGY CHART -
   //-----------------------
