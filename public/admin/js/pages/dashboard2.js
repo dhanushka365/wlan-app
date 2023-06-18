@@ -54,7 +54,7 @@ function getColor(voltage) {
 }
 
 window.addEventListener('DOMContentLoaded', updateEnergyTable);
-setInterval(updateEnergyTable, 50);
+setInterval(updateEnergyTable, 1050);
   /* ChartJS
    * -------
    * Here we will create a few charts using ChartJS
@@ -76,7 +76,7 @@ setInterval(updateEnergyTable, 50);
   updateCardValues();
 
   // Update the card values every 5 seconds
-  setInterval(updateCardValues, 50);
+  setInterval(updateCardValues, 1050);
   /* ChartJS
    * -------
    * Here we will create a few charts using ChartJS
@@ -125,7 +125,7 @@ function updateGauge() {
   });
 }
 
-setInterval(updateGauge, 500);
+setInterval(updateGauge, 1500);
 
 
   /* ChartJS
@@ -188,85 +188,85 @@ setInterval(updateGauge, 500);
         }
 
         setInterval(updateChart1, 9500);
- //-----------------------
-  // - MONTHLY ENERGY CHART -
-  //-----------------------
+//  //-----------------------
+//   // - MONTHLY ENERGY CHART -
+//   //-----------------------
 
-  // Get context with jQuery - using jQuery's .get() method.
-  let hoistedValue = 0;
+//   // Get context with jQuery - using jQuery's .get() method.
+//   let hoistedValue = 0;
 
-  const ctx = document.getElementById('canvas').getContext('2d');
+//   const ctx = document.getElementById('canvas').getContext('2d');
 
-  const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [],
-      datasets: [{
-        label: '# Actual',
-        data: [],
-        backgroundColor: 'transparent',
-        borderColor: 'green',
-        borderWidth: 3
-      },
-      {
-        label: '# Prediction',
-        data: [],
-        backgroundColor: 'transparent',
-        borderColor: 'red',
-        borderWidth: 3
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: false
-        }
-      }
-    }
-  });
+//   const myChart = new Chart(ctx, {
+//     type: 'line',
+//     data: {
+//       labels: [],
+//       datasets: [{
+//         label: '# Actual',
+//         data: [],
+//         backgroundColor: 'transparent',
+//         borderColor: 'green',
+//         borderWidth: 3
+//       },
+//       {
+//         label: '# Prediction',
+//         data: [],
+//         backgroundColor: 'transparent',
+//         borderColor: 'red',
+//         borderWidth: 3
+//       }]
+//     },
+//     options: {
+//       scales: {
+//         y: {
+//           beginAtZero: false
+//         }
+//       }
+//     }
+//   });
   
-  function updateChart() {
-    async function fetchData() {
-      const url = 'http://localhost:8000/json-file';
-      const response = await fetch(url);
-      const datapoints = await response.json();
-      console.log(datapoints);
-      return datapoints;
-    }
+//   function updateChart() {
+//     async function fetchData() {
+//       const url = 'http://localhost:8000/json-file';
+//       const response = await fetch(url);
+//       const datapoints = await response.json();
+//       console.log(datapoints);
+//       return datapoints;
+//     }
   
-    fetchData().then(datapoints => {
-      const date = datapoints.map((date, index) => {
-        return date.Date;
-      });
+//     fetchData().then(datapoints => {
+//       const date = datapoints.map((date, index) => {
+//         return date.Date;
+//       });
   
-      const value = datapoints.map((value, index) => {
-        return value.TrueMegaWatt;
-      });
+//       const value = datapoints.map((value, index) => {
+//         return value.TrueMegaWatt;
+//       });
   
-      const value1 = datapoints.map((value1, index) => {
-        return value1.PredictedMeagWatt;
-      });
+//       const value1 = datapoints.map((value1, index) => {
+//         return value1.PredictedMeagWatt;
+//       });
   
-      if (myChart.data.labels.length > 100) {
-        myChart.data.labels.shift();
-        myChart.data.datasets[0].data.shift();
-        myChart.data.datasets[1].data.shift();
-      }
+//       if (myChart.data.labels.length > 100) {
+//         myChart.data.labels.shift();
+//         myChart.data.datasets[0].data.shift();
+//         myChart.data.datasets[1].data.shift();
+//       }
   
-      myChart.data.labels.push(date[hoistedValue]);
-      myChart.data.datasets[0].data.push(value[hoistedValue]);
-      myChart.data.datasets[1].data.push(value1[hoistedValue]);
-      myChart.update();
+//       myChart.data.labels.push(date[hoistedValue]);
+//       myChart.data.datasets[0].data.push(value[hoistedValue]);
+//       myChart.data.datasets[1].data.push(value1[hoistedValue]);
+//       myChart.update();
   
-      hoistedValue++;
-    });
-  }
+//       hoistedValue++;
+//     });
+//   }
   
-  setInterval(updateChart, 700);
+//   setInterval(updateChart, 700);
 
-  //---------------------------
-  // - END MONTHLY SALES CHART -
-  //---------------------------
+//   //---------------------------
+//   // - END MONTHLY SALES CHART -
+//   //---------------------------
   //-----------------------
   // - MONTHLY SALES CHART -
   //-----------------------

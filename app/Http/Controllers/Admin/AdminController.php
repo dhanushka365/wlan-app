@@ -89,6 +89,14 @@ class AdminController extends Controller
         }
         return view('admin.update_password');
     }
+
+    public function dashboard_forecast(){
+        Session::put('page','dashboard-forecast');
+        return view('admin.dashboard_forecast');
+        //return view('admin.dashboard_forecast');
+
+    }
+    
     public function dashboard(){
         Session::put('page','dashboard');
         // echo "<pre>"; print_r(Auth::guard('admin')->user()); die;

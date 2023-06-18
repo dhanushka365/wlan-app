@@ -25,6 +25,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')-> group(functio
     Route::match(['get','post'],'update-details', 'AdminController@updateDetails');
     Route::post('check-current-password', 'AdminController@checkCurrentPassword');
     Route::get('dashboard', 'AdminController@dashboard');
+    Route::get('dashboard_forecast', 'AdminController@dashboard_forecast');
     Route::get('area','AdminController@AreaChart');
     Route::get('logout','AdminController@logout');
     Route::get('Surveillance_dashboard', 'AdminController@Surveillance_dashboard');
