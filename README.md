@@ -8,6 +8,9 @@
 ![sensordashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/3ad4b490-ea1a-4463-9546-3245c217f4ce)
 ![device control](https://github.com/dhanushka365/wlan-app/assets/66137046/89e39311-8ff1-4a58-8148-7701a7114eea)
 ![forecast](https://github.com/dhanushka365/wlan-app/assets/66137046/eb6074ec-1e6f-4647-a6d0-47b1b990d02e)
+![login](https://github.com/dhanushka365/wlan-app/assets/66137046/3af637a9-4f7f-4e8e-9ddc-476eaec6d2aa)
+![Update details](https://github.com/dhanushka365/wlan-app/assets/66137046/5d165b34-aa7b-4842-8429-7f3147244a97)
+![Update Password](https://github.com/dhanushka365/wlan-app/assets/66137046/3b261599-49d1-4ee7-a55c-874a5565ac2e)
 
 
 
