@@ -5,6 +5,7 @@
 
 
 # User web Interfaces
+![sensordashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/3ad4b490-ea1a-4463-9546-3245c217f4ce)
 
 
 
