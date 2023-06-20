@@ -1,7 +1,9 @@
 # Our Presentation Slides
 ![ppt](https://github.com/dhanushka365/wlan-app/assets/66137046/645dfe6c-a3b9-432b-9b52-3fbba17e9e16)
+[WLAN EDGE COMPUTER (2) (1).pptx](https://github.com/dhanushka365/wlan-app/files/11796906/WLAN.EDGE.COMPUTER.2.1.pptx)
 
-
+# Video
+[****](https://drive.google.com/file/d/1eqHiMNS1Fmv8Q1pyvqPRn_vB94SKA0Cc/view?usp=sharing)
 
 
 # User web Interfaces
