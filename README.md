@@ -8,8 +8,8 @@
 
 # User web Interfaces
 ![land1](https://github.com/dhanushka365/wlan-app/assets/66137046/3e112480-9eca-4cce-a686-7a928fffee05)
-![landingpage2](https://github.com/dhanushka365/wlan-app/assets/66137046/8219a8e9-5cb7-4784-a796-105cc1634d40)
 ![landingpage1](https://github.com/dhanushka365/wlan-app/assets/66137046/3e939fa7-f4a2-4640-a613-6a70a4284dd7)
+![landingpage2](https://github.com/dhanushka365/wlan-app/assets/66137046/8219a8e9-5cb7-4784-a796-105cc1634d40)
 
 ![sensordashboard](https://github.com/dhanushka365/wlan-app/assets/66137046/3ad4b490-ea1a-4463-9546-3245c217f4ce)
 ![device control](https://github.com/dhanushka365/wlan-app/assets/66137046/89e39311-8ff1-4a58-8148-7701a7114eea)
