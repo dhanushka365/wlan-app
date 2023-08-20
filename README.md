@@ -11,13 +11,6 @@ human recognition, pose detection, smart home application.
 # Overall Architecture
 ![Picture5](https://github.com/dhanushka365/wlan-app/assets/66137046/a154371b-f0c6-457d-9291-9c16c50d08ed)
 
-# Our Presentation Slides
-![ppt](https://github.com/dhanushka365/wlan-app/assets/66137046/645dfe6c-a3b9-432b-9b52-3fbba17e9e16)
-[WLAN EDGE COMPUTER (2) (1).pptx](https://github.com/dhanushka365/wlan-app/files/11796906/WLAN.EDGE.COMPUTER.2.1.pptx)
-
-# Video
-[Link to Video](https://drive.google.com/file/d/1eqHiMNS1Fmv8Q1pyvqPRn_vB94SKA0Cc/view?usp=sharing)
-
 
 # User Interface
 ![land1](https://github.com/dhanushka365/wlan-app/assets/66137046/3e112480-9eca-4cce-a686-7a928fffee05)
@@ -34,27 +27,13 @@ human recognition, pose detection, smart home application.
 ![Update details](https://github.com/dhanushka365/wlan-app/assets/66137046/5d165b34-aa7b-4842-8429-7f3147244a97)
 ![Update Password](https://github.com/dhanushka365/wlan-app/assets/66137046/3b261599-49d1-4ee7-a55c-874a5565ac2e)
 
+# Our Presentation Slides
+![ppt](https://github.com/dhanushka365/wlan-app/assets/66137046/645dfe6c-a3b9-432b-9b52-3fbba17e9e16)
+[WLAN EDGE COMPUTER (2) (1).pptx](https://github.com/dhanushka365/wlan-app/files/11796906/WLAN.EDGE.COMPUTER.2.1.pptx)
+
+# Video
+[Link to Video](https://drive.google.com/file/d/1eqHiMNS1Fmv8Q1pyvqPRn_vB94SKA0Cc/view?usp=sharing)
 
 
-# Only for development purpose
 
-## migrate DB
--  php artisan make:migration create_db_power_meter_tabel
--  php artisan make:migration create_db_device_control_tabel
--  php artisan make:migration create_admins_table
--  php artisan migrate
-## model create
--  php artisan make:model Admin
-## middleware create
--  php artisan make:middleware Admin
-## database seeder create
--  php artisan make:seeder AdminsTableSeeder
--  php artisan db:seed
-## Controller create
--  php artisan make:controller Device/DeviceController 
--  php artisan make:controller Device/ChartsApiController   
-## serve app
--  php artisan serve --host=0.0.0.0 --port=8000
-## image upload
--  composer require intervention/image
 
