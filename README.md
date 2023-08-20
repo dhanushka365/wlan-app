@@ -15,6 +15,9 @@
 ![device control](https://github.com/dhanushka365/wlan-app/assets/66137046/89e39311-8ff1-4a58-8148-7701a7114eea)
 ![forecast](https://github.com/dhanushka365/wlan-app/assets/66137046/eb6074ec-1e6f-4647-a6d0-47b1b990d02e)
 ![login](https://github.com/dhanushka365/wlan-app/assets/66137046/3af637a9-4f7f-4e8e-9ddc-476eaec6d2aa)
+![posedetction](https://github.com/dhanushka365/wlan-app/assets/66137046/735ecfd2-c464-4754-88e1-e067c42c27f8)
+![face detection](https://github.com/dhanushka365/wlan-app/assets/66137046/6755c970-1a12-4c59-87f0-1a05406b9b67)
+
 ![Update details](https://github.com/dhanushka365/wlan-app/assets/66137046/5d165b34-aa7b-4842-8429-7f3147244a97)
 ![Update Password](https://github.com/dhanushka365/wlan-app/assets/66137046/3b261599-49d1-4ee7-a55c-874a5565ac2e)
 
