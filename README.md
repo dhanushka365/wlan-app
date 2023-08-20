@@ -1,4 +1,5 @@
-# Overall Architecture![image](https://github.com/dhanushka365/wlan-app/assets/66137046/68be1d60-0ae7-4279-9173-9510e7447a3b)
+# Overall Architecture
+![image](https://github.com/dhanushka365/wlan-app/assets/66137046/68be1d60-0ae7-4279-9173-9510e7447a3b)
 ![Picture5](https://github.com/dhanushka365/wlan-app/assets/66137046/a154371b-f0c6-457d-9291-9c16c50d08ed)
 
 # Our Presentation Slides
