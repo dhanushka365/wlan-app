@@ -1,3 +1,6 @@
+# Overall Architecture![image](https://github.com/dhanushka365/wlan-app/assets/66137046/68be1d60-0ae7-4279-9173-9510e7447a3b)
+![Picture5](https://github.com/dhanushka365/wlan-app/assets/66137046/a154371b-f0c6-457d-9291-9c16c50d08ed)
+
 # Our Presentation Slides
 ![ppt](https://github.com/dhanushka365/wlan-app/assets/66137046/645dfe6c-a3b9-432b-9b52-3fbba17e9e16)
 [WLAN EDGE COMPUTER (2) (1).pptx](https://github.com/dhanushka365/wlan-app/files/11796906/WLAN.EDGE.COMPUTER.2.1.pptx)
