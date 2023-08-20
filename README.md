@@ -1,6 +1,8 @@
+# Introduction
 Edge computing enables the processing of data close to the network edge. Hence, edge computing provides low latency, reduces the data volume transported in the networks, 
 reduces the cost of operation, and increases the privacy of data. A WLAN edge computer adds computational and storage capabilities to household or industrial WLANs. Thereby, 
-services such as surveillance video processing, IoT data processing, and industrial control can operate with minimum latency. This project would involve a design of a WLAN 
+services such as surveillance video processing, IoT data processing, and industrial control can operate with minimum latency. 
+This project would involve a design of a WLAN 
 edge computer that directly connects to a Wi-Fi router. The devices in the network will connect to the WLAN edge computer, where server applications would process the data 
 of these applications. The objective of this project is to implement a WLAN Edge Computer that can be used in a home environment with the features, Surveillance video processing,
 human recognition, pose detection, smart home application.
